@@ -33,3 +33,6 @@ config/environments/*.local.yml
 
 /node_modules
 /public/assets
+
+/app/assets/builds/*
+!/app/assets/builds/.keep

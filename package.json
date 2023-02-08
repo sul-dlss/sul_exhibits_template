@@ -1,6 +1,11 @@
 {
   "dependencies": {
+    "blacklight-range-limit": "8.2.4-beta.1",
     "bootstrap": "^4.6.2",
-    "bootstrap-slider": "^11.0.2"
+    "bootstrap-slider": "^11.0.2",
+    "sass": "^1.57.1"
+  },
+  "scripts": {
+    "build:css": "sass ./app/assets/stylesheets/application.sass.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules"
   }
 }

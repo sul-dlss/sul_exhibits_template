@@ -31,19 +31,19 @@ See [projectblacklight/spotlight](https://github.com/projectblacklight/spotlight
 Install dependencies, set up the databases and run migrations:
 ```console
 $ bundle install
-$ bundle exec rake db:setup
+$ bin/rails db:setup
 ```
 
 You can spin up the Rails server, solr_wrapper, and populate the Solr index using this command:
 ```console
-$ REMOTE_USER="archivist1@example.com" bundle exec rake server
+$ REMOTE_USER="archivist1@example.com" bin/dev
 ```
 When prompted to create an admin user, the email should match the email provided in  `REMOTE_USER`. This will allow you to bypass authentication.
 
 ## Testing
 Run RuboCop and tests:
 ```console
-$ bundle exec rake
+$ bin/rake
 ```
 
 **Tip:** if you receive the error message `ERROR: Core 'blacklight-core' already exists!` you have an instance of Solr running elsewhere. Clean out your data with `solr_wrapper clean` or search for rogue instances with `ps aux | grep solr`.

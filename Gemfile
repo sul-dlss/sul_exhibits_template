@@ -11,14 +11,8 @@ gem 'rails', '~> 7.0'
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 
-# Use SCSS for stylesheets
-gem 'sassc-rails'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 2.7.2'
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -115,7 +109,6 @@ source 'https://gems.contribsys.com/' do
 end
 
 gem 'sidekiq', '~> 7.0'
-gem 'sul_styles'
 gem 'dotenv'
 gem 'riiif'
 gem 'rsolr'
@@ -138,3 +131,5 @@ gem 'blacklight-oembed', '~> 1.0'
 
 # Used for shared reporting https://github.com/sul-dlss/exhibits/issues/2069
 gem 'redis', '~> 5.0'
+
+gem "cssbundling-rails", "~> 1.1"

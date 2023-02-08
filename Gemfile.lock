@@ -231,6 +231,8 @@ GEM
       rexml
     csl-styles (2.0.1)
       csl (~> 2.0)
+    cssbundling-rails (1.1.2)
+      railties (>= 6.0.0)
     database_cleaner (2.0.1)
       database_cleaner-active_record (~> 2.0.0)
     database_cleaner-active_record (2.0.1)
@@ -711,8 +713,6 @@ GEM
     stanford-mods (3.3.1)
       activesupport
       mods (~> 3.0, >= 3.0.3)
-    sul_styles (0.7.0)
-      rails (>= 4.1, < 8)
     test_xml (0.1.8)
       diffy (~> 3.0)
       nokogiri (>= 1.3.2)
@@ -748,8 +748,6 @@ GEM
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     uber (0.1.0)
-    uglifier (4.2.0)
-      execjs (>= 0.3.0, < 3)
     underscore-rails (1.8.3)
     unf (0.1.4)
       unf_ext
@@ -813,6 +811,7 @@ DEPENDENCIES
   citeproc-ruby
   config
   csl-styles
+  cssbundling-rails (~> 1.1)
   database_cleaner
   debug
   devise
@@ -851,7 +850,6 @@ DEPENDENCIES
   rubocop-rails
   rubocop-rspec
   ruby-oembed
-  sassc-rails
   selenium-webdriver (!= 3.13.0)
   sidekiq (~> 7.0)
   sidekiq-pro (~> 7.0)!
@@ -864,13 +862,11 @@ DEPENDENCIES
   sprockets-rails
   sqlite3
   stanford-mods (~> 3.0)
-  sul_styles
   traject
   turbolinks (~> 5)
   turnout
   twitter-typeahead-rails (= 0.11.1.pre.corejavascript)
   tzinfo-data
-  uglifier (>= 2.7.2)
   web-console (>= 4.1.0)
   webdrivers
   webmock

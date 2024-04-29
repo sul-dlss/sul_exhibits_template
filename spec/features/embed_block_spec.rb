@@ -8,7 +8,7 @@ RSpec.feature 'Solr Documents Embed Block', type: :feature, js: true do
   include Spotlight::TestFeaturesHelpers
 
   let(:exhibit) { create(:exhibit) }
-  let(:curator) { create(:exhibit_admin, exhibit: exhibit) }
+  let(:curator) { create(:exhibit_admin, exhibit:) }
 
   before do
     allow(Spotlight::Engine.config).to receive(:filter_resources_by_exhibit).and_return(false)

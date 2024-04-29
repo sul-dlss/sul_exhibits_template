@@ -4,17 +4,17 @@ require 'rails_helper'
 
 RSpec.feature 'Adding items to an exhibit', type: :feature do
   let(:exhibit) { create(:exhibit) }
-  let(:user) { create(:exhibit_admin, exhibit: exhibit) }
+  let(:user) { create(:exhibit_admin, exhibit:) }
   let(:number_of_resources) { 5 }
-  let(:resource) { DorHarvester.create(exhibit: exhibit) }
+  let(:resource) { DorHarvester.create(exhibit:) }
 
   before do
     sign_in user
 
     number_of_resources.times do |i|
       Spotlight::SolrDocumentSidecar.create(
-        exhibit: exhibit,
-        resource: resource,
+        exhibit:,
+        resource:,
         document: SolrDocument.new(id: "abc#{i}"),
         index_status: { ok: true }
       )
@@ -62,8 +62,8 @@ RSpec.feature 'Adding items to an exhibit', type: :feature do
     context 'when an indexing error occurs' do
       before do
         Spotlight::SolrDocumentSidecar.create(
-          exhibit: exhibit,
-          resource: resource,
+          exhibit:,
+          resource:,
           document: SolrDocument.new(id: 'xyz'),
           index_status: { ok: false, message: 'There was a problem indexing' }
         )

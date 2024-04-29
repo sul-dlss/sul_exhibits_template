@@ -12,7 +12,7 @@ RSpec.describe IiifCanvasIndexer do
       custom_manifest_pattern: 'http://example.org/iiif/{id}/manifest'
     )
   end
-  let(:exhibit) { create(:exhibit, viewer: viewer) }
+  let(:exhibit) { create(:exhibit, viewer:) }
   let(:druid) { 'book1' }
   let(:document) do
     SolrDocument.new(

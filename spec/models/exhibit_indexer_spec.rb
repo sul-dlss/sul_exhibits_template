@@ -9,7 +9,7 @@ RSpec.describe ExhibitIndexer do
   let(:exhibit) { FactoryBot.create(:exhibit) }
 
   before do
-    allow(described_class).to receive_messages(solr_connection: solr_connection)
+    allow(described_class).to receive_messages(solr_connection:)
   end
 
   describe '#add' do

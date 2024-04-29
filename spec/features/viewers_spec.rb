@@ -12,7 +12,7 @@ describe 'Viewers', type: :feature do
   end
 
   context 'an authorized user' do
-    let(:user) { create(:exhibit_admin, exhibit: exhibit) }
+    let(:user) { create(:exhibit_admin, exhibit:) }
 
     it 'sees the default configuration' do
       visit spotlight.exhibit_dashboard_path(exhibit)
@@ -74,8 +74,8 @@ describe 'Viewers', type: :feature do
   end
 
   describe 'rendered viewer' do
-    let(:feature_page) { FactoryBot.create(:feature_page, exhibit: exhibit) }
-    let(:admin) { FactoryBot.create(:exhibit_admin, exhibit: exhibit) }
+    let(:feature_page) { FactoryBot.create(:feature_page, exhibit:) }
+    let(:admin) { FactoryBot.create(:exhibit_admin, exhibit:) }
 
     before do
       exhibit.required_viewer.viewer_type = 'mirador3'

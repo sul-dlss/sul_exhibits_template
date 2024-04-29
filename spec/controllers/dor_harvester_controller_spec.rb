@@ -5,7 +5,7 @@ require 'rails_helper'
 RSpec.describe DorHarvesterController, type: :controller do
   let(:resource) { double }
   let(:exhibit) { create(:exhibit) }
-  let(:user) { create(:exhibit_admin, exhibit: exhibit) }
+  let(:user) { create(:exhibit_admin, exhibit:) }
   let(:attributes) { { druid_list: '' } }
 
   before do

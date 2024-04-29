@@ -29,7 +29,7 @@ module ExhibitExtension
   def send_publish_state_change_notification
     return unless saved_changes.key?('published')
 
-    SendPublishStateChangeNotificationJob.perform_later(exhibit: self, published: published)
+    SendPublishStateChangeNotificationJob.perform_later(exhibit: self, published:)
   end
 
   def index_exhibit_metadata

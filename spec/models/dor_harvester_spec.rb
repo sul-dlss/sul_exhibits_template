@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 describe DorHarvester do
-  subject(:harvester) { described_class.create druid_list: druid, exhibit: exhibit }
+  subject(:harvester) { described_class.create druid_list: druid, exhibit: }
 
   let(:exhibit) { create(:exhibit) }
   let(:druid) { 'xf680rd3068' }
@@ -65,7 +65,7 @@ describe DorHarvester do
       end
 
       context 'when index_related_content is enabled for an exhibit' do
-        subject(:harvester) { described_class.create druid_list: druid, exhibit: exhibit }
+        subject(:harvester) { described_class.create druid_list: druid, exhibit: }
 
         let(:exhibit) { create(:exhibit, slug: 'test-flag-exhibit-slug') }
 
@@ -132,7 +132,7 @@ describe DorHarvester do
 
     let(:items) { [] }
     let(:resource) do
-      instance_double(Purl, exists?: true, bare_druid: druid, items: items)
+      instance_double(Purl, exists?: true, bare_druid: druid, items:)
     end
 
     before do
@@ -148,7 +148,7 @@ describe DorHarvester do
 
     context 'with a collection' do
       let(:items) { [child].each } # `#each` converts the array to an enumerable
-      let(:child) { instance_double(PurlFetcher::Client::PublicXmlRecord, druid: druid) }
+      let(:child) { instance_double(PurlFetcher::Client::PublicXmlRecord, druid:) }
 
       it 'includes child resources' do
         expect(subject.size).to eq 2

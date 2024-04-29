@@ -14,7 +14,7 @@ RSpec.feature 'Search histories', type: :feature do
     # do a JSON or non-JSON query to see whether it's also added to the history
     visit spotlight.search_exhibit_catalog_path(exhibit_id: exhibit.slug,
                                                 q: 'book',
-                                                format: format)
+                                                format:)
   end
 
   context 'when format is JSON' do

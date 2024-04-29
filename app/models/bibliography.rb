@@ -30,7 +30,7 @@ class Bibliography
 
   # Renders a *sorted* bibliography
   def render(format = 'html')
-    cp = CiteProc::Processor.new style: 'chicago-author-date', format: format
+    cp = CiteProc::Processor.new(style: 'chicago-author-date', format:)
     cp.import bibliography.to_citeproc
     cp.bibliography.join
   end

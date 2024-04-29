@@ -21,7 +21,7 @@ describe Spotlight::Resources::IiifManifest do
     it 'adds in the exhibits custom field thumbnail_square_url_ssm' do
       expect(iiif_manifest_resource).to receive_messages(
         thumbnail_field: 'thumbnail_field',
-        manifest: manifest
+        manifest:
       )
       iiif_manifest_resource.add_thumbnail_url
 
@@ -62,7 +62,7 @@ describe Spotlight::Resources::IiifManifest do
       it 'uses the first canvas as a thumbnail' do
         expect(iiif_manifest_resource).to receive_messages(
           thumbnail_field: 'thumbnail_field',
-          manifest: manifest
+          manifest:
         )
         iiif_manifest_resource.add_thumbnail_url
 

@@ -10,7 +10,7 @@ class ExhibitBot
   end
 
   def message(channel: default_channel, as_user: true, text:)
-    client.chat_postMessage(channel: channel, as_user: as_user, text: text)
+    client.chat_postMessage(channel:, as_user:, text:)
   end
 
   private

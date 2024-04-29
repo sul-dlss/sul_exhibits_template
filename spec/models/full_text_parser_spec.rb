@@ -5,7 +5,7 @@ require 'rails_helper'
 describe FullTextParser do
   subject(:parser) { described_class.new(purl_object) }
 
-  let(:purl_object) { instance_double('PurlObject', bare_druid: 'cc842mn9348', public_xml: public_xml) }
+  let(:purl_object) { instance_double('PurlObject', bare_druid: 'cc842mn9348', public_xml:) }
   let(:public_xml) { Nokogiri::XML.parse(File.read(File.join(FIXTURES_PATH, 'cc842mn9348.xml'))) }
 
   describe '#ocr_files' do
@@ -35,7 +35,7 @@ describe FullTextParser do
   end
 
   context 'with an hOCR transcription' do
-    let(:purl_object) { instance_double('PurlObject', bare_druid: 'hocrexample', public_xml: public_xml) }
+    let(:purl_object) { instance_double('PurlObject', bare_druid: 'hocrexample', public_xml:) }
     let(:public_xml) { Nokogiri::XML.parse(File.read(File.join(FIXTURES_PATH, 'hocrexample.xml'))) }
     let(:text) do
       <<-FIXTURE
@@ -64,7 +64,7 @@ describe FullTextParser do
   end
 
   context 'with a plain-text transcription' do
-    let(:purl_object) { instance_double('PurlObject', bare_druid: 'xt162pg0437', public_xml: public_xml) }
+    let(:purl_object) { instance_double('PurlObject', bare_druid: 'xt162pg0437', public_xml:) }
     let(:public_xml) { Nokogiri::XML.parse(File.read(File.join(FIXTURES_PATH, 'xt162pg0437.xml'))) }
 
     before do

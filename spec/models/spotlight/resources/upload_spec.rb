@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 describe Spotlight::Resources::Upload do
-  subject(:resource) { described_class.create! exhibit: exhibit, upload: upload }
+  subject(:resource) { described_class.create! exhibit:, upload: }
 
   let(:exhibit) { create(:exhibit) }
   let(:upload_id) { 123 }

@@ -64,8 +64,8 @@ module SearchAcrossBlacklightOverrides
     view_context.render_document_index(exhibits)
   end
 
-  def opensearch_catalog_url(*args)
-    view_context.spotlight.opensearch_search_across_url(*args)
+  def opensearch_catalog_url(*)
+    view_context.spotlight.opensearch_search_across_url(*)
   end
 
   def start_over_path(*_args)
@@ -107,11 +107,11 @@ module SearchAcrossBlacklightOverrides
 
     case collection.total_count
     when 0
-      t('search_across.pagination_info.no_items_found', entry_name: entry_name).html_safe
+      t('search_across.pagination_info.no_items_found', entry_name:).html_safe
     when 1
-      t('search_across.pagination_info.single_item_found', entry_name: entry_name).html_safe
+      t('search_across.pagination_info.single_item_found', entry_name:).html_safe
     else
-      t('search_across.pagination_info.pages', entry_name: entry_name,
+      t('search_across.pagination_info.pages', entry_name:,
                                                current_page: collection.current_page,
                                                num_pages: collection.total_pages,
                                                start_num: view_context.number_with_delimiter(collection.offset_value + 1),

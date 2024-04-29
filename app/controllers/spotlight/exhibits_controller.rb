@@ -7,8 +7,8 @@ require_dependency File.join(spotlight_path, 'app/controllers/spotlight/exhibits
 module Spotlight
   # Override the upstream HomePagesController in order to inject range limit behaviors
   class ExhibitsController
-    def search_action_url(*args)
-      main_app.search_search_across_url(*args)
+    def search_action_url(*)
+      main_app.search_search_across_url(*)
     end
 
     def blacklight_config

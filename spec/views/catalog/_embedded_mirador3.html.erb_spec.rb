@@ -9,7 +9,7 @@ describe 'catalog/_embedded_mirador3', type: :view do
   before do
     without_partial_double_verification do
       allow(view).to receive_messages(
-        document: document
+        document:
       )
     end
   end

@@ -19,9 +19,9 @@ module ApplicationHelper
   ##
   # @param [String] manifest
   def iiif_drag_n_drop(manifest, width: '40')
-    link_url = format Settings.iiif_dnd_base_url, query: { manifest: manifest }.to_query
+    link_url = format Settings.iiif_dnd_base_url, query: { manifest: }.to_query
     link_to link_url, class: 'iiif-dnd float-right', data: { turbolinks: false } do
-      image_tag 'iiif-drag-n-drop.svg', width: width, alt: 'IIIF Drag-n-drop'
+      image_tag 'iiif-drag-n-drop.svg', width:, alt: 'IIIF Drag-n-drop'
     end
   end
 
@@ -36,10 +36,10 @@ module ApplicationHelper
     canvas = choose_canvas_id(block)
     if params[:controller] == 'spotlight/catalog'
       render partial: current_exhibit.required_viewer.to_partial_path,
-             locals: { document: document, block: block, canvas: canvas }
+             locals: { document:, block:, canvas: }
     else
       render partial: current_exhibit.required_viewer.default_viewer_path,
-             locals: { document: document, block: block, canvas: canvas }
+             locals: { document:, block:, canvas: }
     end
   end
 
@@ -52,8 +52,8 @@ module ApplicationHelper
 
     content_tag :div, '', data: {
       embed_url: blacklight_oembed_engine.embed_url(
-        url: url,
-        canvas_id: canvas_id,
+        url:,
+        canvas_id:,
         search: params[:search],
         maxheight: block&.maxheight.presence || '600',
         suggested_search: (current_search_session&.query_params || {})[:q]

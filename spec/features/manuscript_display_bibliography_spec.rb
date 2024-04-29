@@ -16,7 +16,7 @@ RSpec.feature 'Cited manuscripts display on the bibliography show page', type: :
     ActiveJob::Base.queue_adapter = :inline # block until indexing has committed
 
     # we index some bibliography records that have links to our resource
-    bib = BibliographyResource.new(bibtex_file: bibtex_data, exhibit: exhibit)
+    bib = BibliographyResource.new(bibtex_file: bibtex_data, exhibit:)
     bib.save_and_index
 
     # render the resource show page

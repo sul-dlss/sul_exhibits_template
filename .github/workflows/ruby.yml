@@ -2,35 +2,35 @@ name: CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   tests:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        ruby: ['3.1', '3.2']
+        ruby: ["3.2", "3.3"]
     steps:
-    - uses: actions/checkout@v3
-    - name: Set up Ruby
-      uses: ruby/setup-ruby@v1
-      with:
-        ruby-version: ${{ matrix.ruby }}
-    - uses: actions/cache@v3
-      with:
-        path: vendor/bundle
-        key: ${{ runner.os }}-gems-202103-${{ hashFiles('**/Gemfile.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-gems-202103
-    - name: Bundle install
-      run: bundle config path vendor/bundle
-    - name: Use sidekiq pro
-      env:
-        BUNDLE_GEMS__CONTRIBSYS__COM: ${{ secrets.BUNDLE_GEMS__CONTRIBSYS__COM }}
-      run: bundle config --local gems.contribsys.com ${BUNDLE_GEMS__CONTRIBSYS__COM}
-    - name: Install dependencies
-      run: bin/setup && bin/rails db:test:prepare
-    - name: Run tests
-      run: bundle exec rake
+      - uses: actions/checkout@v3
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby }}
+      - uses: actions/cache@v3
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-202103-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-202103
+      - name: Bundle install
+        run: bundle config path vendor/bundle
+      - name: Use sidekiq pro
+        env:
+          BUNDLE_GEMS__CONTRIBSYS__COM: ${{ secrets.BUNDLE_GEMS__CONTRIBSYS__COM }}
+        run: bundle config --local gems.contribsys.com ${BUNDLE_GEMS__CONTRIBSYS__COM}
+      - name: Install dependencies
+        run: bin/setup && bin/rails db:test:prepare
+      - name: Run tests
+        run: bundle exec rake

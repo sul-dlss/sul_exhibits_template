@@ -4,7 +4,7 @@
 # A background job to send notifications via the ExhibitBot about the published state of an exhibit changing
 class SendPublishStateChangeNotificationJob < ApplicationJob
   def perform(exhibit:, published:)
-    ExhibitBot.message(text: message_text(exhibit: exhibit, published: published))
+    ExhibitBot.message(text: message_text(exhibit:, published:))
   end
 
   private

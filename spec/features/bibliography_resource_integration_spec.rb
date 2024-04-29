@@ -7,7 +7,7 @@ RSpec.describe 'Bibliography resource integration test', type: :feature do
 
   let(:bibliography_resource) do
     BibliographyResource.new(
-      bibtex_file: File.open(file).read, exhibit: exhibit
+      bibtex_file: File.open(file).read, exhibit:
     )
   end
 

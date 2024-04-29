@@ -7,7 +7,7 @@ describe Spotlight::CatalogController do
   routes { Spotlight::Engine.routes }
 
   let(:exhibit) { create(:exhibit) }
-  let(:user) { create(:exhibit_admin, exhibit: exhibit) }
+  let(:user) { create(:exhibit_admin, exhibit:) }
 
   before do
     sign_in user

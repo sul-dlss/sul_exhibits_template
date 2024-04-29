@@ -9,7 +9,7 @@ RSpec.describe 'Canvas resource integration test', type: :feature do
   let(:enhanced_canvas) do
     raw_canvas.merge(manifest_label: 'Awesome sauce!', range_labels: %w(Label1 Label2))
   end
-  let(:resource) { CanvasResource.new(exhibit: exhibit, data: enhanced_canvas) }
+  let(:resource) { CanvasResource.new(exhibit:, data: enhanced_canvas) }
   let(:file) { 'spec/fixtures/iiif/fh878gz0315-canvas-521.json' }
   let(:exhibit) { create(:exhibit) }
   let(:to_solr_hash) { indexed_documents(resource).first }

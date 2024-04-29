@@ -32,7 +32,7 @@ describe 'Viewer Configuration', type: :request do
     end
 
     context 'an exhibit admin' do
-      let(:user) { create(:exhibit_admin, exhibit: exhibit) }
+      let(:user) { create(:exhibit_admin, exhibit:) }
 
       it 'is allowed' do
         get "/#{exhibit.slug}/viewers/edit"
@@ -52,7 +52,7 @@ describe 'Viewer Configuration', type: :request do
     end
 
     context 'an exhibit admin' do
-      let(:user) { create(:exhibit_admin, exhibit: exhibit) }
+      let(:user) { create(:exhibit_admin, exhibit:) }
       let(:viewer_params) { { viewer_type: 'mirador' } }
 
       before do

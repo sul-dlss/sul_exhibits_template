@@ -4,7 +4,7 @@ require 'rails_helper'
 
 describe 'Theme switching', type: :feature do
   let(:exhibit) { create(:exhibit) }
-  let(:user) { create(:exhibit_admin, exhibit: exhibit) }
+  let(:user) { create(:exhibit_admin, exhibit:) }
 
   before { sign_in user }
 

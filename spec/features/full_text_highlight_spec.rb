@@ -4,8 +4,8 @@ require 'rails_helper'
 
 RSpec.feature 'Full text highlighting' do
   let(:exhibit) { create(:exhibit) }
-  let(:dor_harvester) { DorHarvester.new(druid_list: druid, exhibit: exhibit) }
-  let(:user) { create(:exhibit_admin, exhibit: exhibit) }
+  let(:dor_harvester) { DorHarvester.new(druid_list: druid, exhibit:) }
+  let(:user) { create(:exhibit_admin, exhibit:) }
 
   before do
     allow(Spotlight::Engine.config).to receive(:filter_resources_by_exhibit).and_return(false)

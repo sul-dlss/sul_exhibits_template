@@ -5,15 +5,15 @@ require 'rails_helper'
 describe 'Index Statuses', type: :request do
   let(:exhibit) { create(:exhibit) }
   let(:user) { nil }
-  let(:resource) { DorHarvester.create(exhibit: exhibit) }
+  let(:resource) { DorHarvester.create(exhibit:) }
 
   before do
     sign_in user
 
     5.times do |i|
       Spotlight::SolrDocumentSidecar.create(
-        exhibit: exhibit,
-        resource: resource,
+        exhibit:,
+        resource:,
         document: SolrDocument.new(id: "abc#{i}"),
         index_status: { ok: true }
       )
@@ -21,7 +21,7 @@ describe 'Index Statuses', type: :request do
   end
 
   context 'for an exhibit admin' do
-    let(:user) { create(:exhibit_admin, exhibit: exhibit) }
+    let(:user) { create(:exhibit_admin, exhibit:) }
 
     describe '#show' do
       it "renders json including details about the item's indexing status" do

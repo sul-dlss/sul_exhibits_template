@@ -103,7 +103,7 @@ class DorHarvester < Spotlight::Resource
               else
                 exception_or_message.to_s
               end.truncate(1.megabyte)
-    RecordIndexStatusJob.perform_later(self, resource.bare_druid, ok: false, message: message)
+    RecordIndexStatusJob.perform_later(self, resource.bare_druid, ok: false, message:)
   end
 
   def trigger_update_resource_metadata

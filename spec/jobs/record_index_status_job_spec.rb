@@ -5,7 +5,7 @@ require 'rails_helper'
 RSpec.describe RecordIndexStatusJob do
   describe '#perform' do
     let(:exhibit) { create(:exhibit) }
-    let(:harvester) { DorHarvester.new(exhibit: exhibit) }
+    let(:harvester) { DorHarvester.new(exhibit:) }
 
     it 'creates a new sidecar with a status entry' do
       expect do

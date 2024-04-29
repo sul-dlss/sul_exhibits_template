@@ -21,7 +21,7 @@ class IiifCanvasIndexer
         # Don't bother to index unless there is an annotationList content to do so.
         next unless other_content['@type'] == ANNOTATION_LIST
 
-        canvas_resource = CanvasResource.find_or_initialize_by(url: other_content['@id'], exhibit: exhibit)
+        canvas_resource = CanvasResource.find_or_initialize_by(url: other_content['@id'], exhibit:)
         # We need to pass some more information to the canvas indexer, and we
         # so we do this by enhancing the stored Hash with needed fields.
         enhanced_canvas = JSON.parse(canvas.to_json)

@@ -7,11 +7,11 @@ describe SearchAcrossSearchBuilder do
 
   let(:scope) do
     instance_double(Blacklight::SearchService,
-                    blacklight_config: blacklight_config,
-                    context: context,
+                    blacklight_config:,
+                    context:,
                     search_state_class: nil)
   end
-  let(:context) { { current_ability: current_ability } }
+  let(:context) { { current_ability: } }
   let(:blacklight_config) { SearchAcrossController.blacklight_config.deep_copy }
   let(:user_params) { {} }
   let(:user) { create(:curator) }

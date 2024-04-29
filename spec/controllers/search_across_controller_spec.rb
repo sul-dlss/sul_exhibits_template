@@ -136,7 +136,7 @@ RSpec.describe SearchAcrossController, type: :controller do
     let(:exhibit) do
       create(:exhibit, slug: 'mine', published: true, tag_list: ['bar'])
     end
-    let(:user) { create(:exhibit_admin, exhibit: exhibit) }
+    let(:user) { create(:exhibit_admin, exhibit:) }
 
     before do
       sign_in user

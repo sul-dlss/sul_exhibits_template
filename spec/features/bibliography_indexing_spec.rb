@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.feature 'Bibliography indexing', type: :feature do
   let(:exhibit) { create(:exhibit) }
-  let(:curator) { create(:exhibit_admin, exhibit: exhibit) }
+  let(:curator) { create(:exhibit_admin, exhibit:) }
 
   before do
     sign_in curator

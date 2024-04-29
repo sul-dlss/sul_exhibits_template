@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 describe SendPublishStateChangeNotificationJob do
-  let(:job) { described_class.perform_now(exhibit: exhibit, published: published) }
+  let(:job) { described_class.perform_now(exhibit:, published:) }
   let(:exhibit) { FactoryBot.create(:exhibit) }
 
   context 'when publishing' do

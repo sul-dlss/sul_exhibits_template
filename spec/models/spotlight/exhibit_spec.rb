@@ -73,7 +73,7 @@ describe Spotlight::Exhibit do
 
         expect do
           exhibit.save
-        end.to have_enqueued_job(IndexExhibitMetadataJob).with(exhibit: exhibit, action: 'add')
+        end.to have_enqueued_job(IndexExhibitMetadataJob).with(exhibit:, action: 'add')
       end
     end
 
@@ -83,7 +83,7 @@ describe Spotlight::Exhibit do
       it 'enqueues the IndexExhibitMetadataJob for adding a document' do
         expect do
           exhibit.save
-        end.to have_enqueued_job(IndexExhibitMetadataJob).with(exhibit: exhibit, action: 'add')
+        end.to have_enqueued_job(IndexExhibitMetadataJob).with(exhibit:, action: 'add')
       end
     end
 
@@ -95,7 +95,7 @@ describe Spotlight::Exhibit do
 
         expect do
           exhibit.save
-        end.to have_enqueued_job(IndexExhibitMetadataJob).with(exhibit: exhibit, action: 'delete')
+        end.to have_enqueued_job(IndexExhibitMetadataJob).with(exhibit:, action: 'delete')
       end
     end
 

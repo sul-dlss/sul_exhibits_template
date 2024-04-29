@@ -15,7 +15,7 @@ RSpec.feature 'Bibliography display on the manuscript show page', type: :feature
     end.join("\n")
 
     # we index some bibliography records that have links to our resource
-    bib = BibliographyResource.new(bibtex_file: bibtex_data, exhibit: exhibit)
+    bib = BibliographyResource.new(bibtex_file: bibtex_data, exhibit:)
     bib.save_and_index
 
     # render the resource show page

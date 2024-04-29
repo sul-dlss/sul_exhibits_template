@@ -12,7 +12,7 @@ RSpec.describe IndexExhibitMetadataJob do
 
   context 'when the action is add' do
     it 'sends the add message to the ExhibitIndexer' do
-      subject.perform(exhibit: exhibit, action: 'add')
+      subject.perform(exhibit:, action: 'add')
 
       expect(indexer).to have_received(:add)
     end
@@ -20,7 +20,7 @@ RSpec.describe IndexExhibitMetadataJob do
 
   context 'when the action is delete' do
     it 'sends the delete message to the ExhibitIndexer' do
-      subject.perform(exhibit: exhibit, action: 'delete')
+      subject.perform(exhibit:, action: 'delete')
 
       expect(indexer).to have_received(:delete)
     end

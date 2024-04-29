@@ -67,7 +67,7 @@ module CatalogHelper
 
     contents = safe_join(contents.map { |v| "<li>#{v}</li>".html_safe }) # rubocop:disable Rails/OutputSafety
     id = options[:document].id
-    render partial: 'catalog/table_of_contents', locals: { contents: contents, collapse_id: "collapseToc-#{id}" }
+    render partial: 'catalog/table_of_contents', locals: { contents:, collapse_id: "collapseToc-#{id}" }
   end
 
   def manuscript_link(options = {})

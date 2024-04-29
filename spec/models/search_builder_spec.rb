@@ -7,13 +7,13 @@ RSpec.describe SearchBuilder do
 
   let(:exhibit) { create(:exhibit) }
   let(:scope) do
-    instance_double('scope', blacklight_config: blacklight_config, current_exhibit: exhibit, search_state_class: nil)
+    instance_double('scope', blacklight_config:, current_exhibit: exhibit, search_state_class: nil)
   end
   let(:rows) { 999 }
   let(:blacklight_params) do
     {
       format: 'json',
-      rows: rows
+      rows:
     }.with_indifferent_access
   end
   let(:blacklight_config) do
@@ -74,7 +74,7 @@ RSpec.describe SearchBuilder do
   end
 
   context 'non-JSON API is over limit' do
-    let(:blacklight_params) { { q: 'my query', rows: rows }.with_indifferent_access } # omit format
+    let(:blacklight_params) { { q: 'my query', rows: }.with_indifferent_access } # omit format
 
     it 'cannot exceed config.max_per_page' do
       expect(builder.to_hash).to include(rows: 100)

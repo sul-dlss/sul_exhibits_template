@@ -9,7 +9,7 @@ describe 'catalog/_exhibits_document_header_default', type: :view do
   before do
     expect(view).to receive_messages(
       current_exhibit: exhibit,
-      document: document,
+      document:,
       document_counter: 0,
       render_document_partial: -> {}
     )

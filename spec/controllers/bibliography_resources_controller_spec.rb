@@ -5,7 +5,7 @@ require 'rails_helper'
 RSpec.describe BibliographyResourcesController, type: :controller do
   let(:resource) { double }
   let(:exhibit) { create(:exhibit) }
-  let(:user) { create(:exhibit_admin, exhibit: exhibit) }
+  let(:user) { create(:exhibit_admin, exhibit:) }
   let(:fixture_file) { fixture_file_upload('spec/fixtures/bibliography/article.bib') }
   let(:attributes) { { bibtex_file: fixture_file } }
 

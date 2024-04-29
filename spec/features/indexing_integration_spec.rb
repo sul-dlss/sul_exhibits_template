@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe 'indexing integration test', type: :feature, vcr: true do
-  subject(:dor_harvester) { DorHarvester.new(druid_list: druid, exhibit: exhibit) }
+  subject(:dor_harvester) { DorHarvester.new(druid_list: druid, exhibit:) }
 
   let(:exhibit) { FactoryBot.create(:exhibit) }
   let(:rsolr) { instance_double(RSolr) }

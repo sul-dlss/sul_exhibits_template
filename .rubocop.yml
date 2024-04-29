@@ -6,14 +6,14 @@ require:
   - rubocop-rails
 
 AllCops:
-  TargetRubyVersion: 2.7
+  TargetRubyVersion: 3.2
   DisplayCopNames: true
   Exclude:
-    - 'bin/**/*'
-    - 'db/**/*'
-    - 'config/**/*'
-    - 'vendor/**/*'
-    - 'spec/fixtures/**/*'
+    - "bin/**/*"
+    - "db/**/*"
+    - "config/**/*"
+    - "vendor/**/*"
+    - "spec/fixtures/**/*"
 
 Rails:
   Enabled: true
@@ -21,17 +21,17 @@ Rails:
 Layout/LineLength:
   Max: 120
   Exclude:
-    - 'app/controllers/concerns/search_across_blacklight_overrides.rb'
-    - 'app/models/spotlight/dor/indexer.rb'
-    - 'lib/traject/dor_config.rb'
-    - 'spec/features/indexing_integration_spec.rb'
-    - 'spec/models/spotlight/dor/indexer_spec.rb'
-    - 'spec/features/bibliography_formatting_spec.rb'
+    - "app/controllers/concerns/search_across_blacklight_overrides.rb"
+    - "app/models/spotlight/dor/indexer.rb"
+    - "lib/traject/dor_config.rb"
+    - "spec/features/indexing_integration_spec.rb"
+    - "spec/models/spotlight/dor/indexer_spec.rb"
+    - "spec/features/bibliography_formatting_spec.rb"
 
 Style/PercentLiteralDelimiters:
   PreferredDelimiters:
-    '%i': '()'
-    '%w': '()'
+    "%i": "()"
+    "%w": "()"
 
 Style/StringLiterals:
   Enabled: true
@@ -51,7 +51,7 @@ Style/HashTransformValues:
 
 Metrics/ClassLength:
   Exclude:
-    - 'app/controllers/catalog_controller.rb'
+    - "app/controllers/catalog_controller.rb"
 
 RSpec/Capybara:
   Enabled: false
@@ -68,21 +68,21 @@ Bundler/OrderedGems:
 RSpec/ExampleLength:
   Max: 10
   Exclude:
-    - 'spec/features/indexing_integration_spec.rb'
+    - "spec/features/indexing_integration_spec.rb"
 
 RSpec/MultipleMemoizedHelpers:
   Enabled: false
 
 Metrics/BlockLength:
   Exclude:
-    - 'app/controllers/catalog_controller.rb'
-    - 'app/controllers/search_across_controller.rb'
-    - 'app/models/spotlight/dor/indexer.rb'
-    - 'spec/**/*'
+    - "app/controllers/catalog_controller.rb"
+    - "app/controllers/search_across_controller.rb"
+    - "app/models/spotlight/dor/indexer.rb"
+    - "spec/**/*"
 
 Performance/RedundantBlockCall:
   Exclude:
-    - 'lib/traject/macros/**/*'
+    - "lib/traject/macros/**/*"
 Layout/EmptyLinesAroundAttributeAccessor:
   Enabled: true
 Layout/SpaceAroundMethodCallOperator:

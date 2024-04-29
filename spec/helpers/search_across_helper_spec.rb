@@ -13,7 +13,7 @@ RSpec.describe SearchAcrossHelper, type: :helper do
 
     it 'removes the group key/value' do
       expect(helper).to receive_messages(
-        search_state: search_state
+        search_state:
       )
       expect(helper.search_without_group).to eq({})
     end
@@ -29,7 +29,7 @@ RSpec.describe SearchAcrossHelper, type: :helper do
 
     it 'removes the group key/value' do
       expect(helper).to receive_messages(
-        search_state: search_state
+        search_state:
       )
       expect(helper.search_with_group).to eq group: true
     end
@@ -89,7 +89,7 @@ RSpec.describe SearchAcrossHelper, type: :helper do
     let(:current_ability) { Ability.new(User.new) }
 
     before do
-      assign(:response, Blacklight::Solr::Response.new(response, nil, blacklight_config: blacklight_config))
+      assign(:response, Blacklight::Solr::Response.new(response, nil, blacklight_config:))
       allow(helper).to receive(:current_ability).and_return(current_ability)
 
       create(:exhibit, slug: 'abc', title: 'Alphabet')
@@ -136,7 +136,7 @@ RSpec.describe SearchAcrossHelper, type: :helper do
     let(:current_ability) { Ability.new(User.new) }
 
     before do
-      assign(:response, Blacklight::Solr::Response.new(response, nil, blacklight_config: blacklight_config))
+      assign(:response, Blacklight::Solr::Response.new(response, nil, blacklight_config:))
       allow(helper).to receive(:current_ability).and_return(current_ability)
 
       create(:exhibit, slug: 'a', title: 'Alphabet')
@@ -168,7 +168,7 @@ RSpec.describe SearchAcrossHelper, type: :helper do
     let(:current_ability) { Ability.new(User.new) }
 
     before do
-      assign(:response, Blacklight::Solr::Response.new(response, nil, blacklight_config: blacklight_config))
+      assign(:response, Blacklight::Solr::Response.new(response, nil, blacklight_config:))
       create(:exhibit, slug: 'abc')
       create(:exhibit, slug: 'xyz')
       create(:exhibit, slug: 'private', published: false)

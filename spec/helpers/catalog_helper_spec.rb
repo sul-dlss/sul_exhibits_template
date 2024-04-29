@@ -61,7 +61,7 @@ describe CatalogHelper, type: :helper do
   end
 
   describe '#paragraph_joined_content' do
-    subject(:content) { helper.paragraph_joined_content(value: value) }
+    subject(:content) { helper.paragraph_joined_content(value:) }
 
     context 'single description' do
       let(:value) { %w(<p>stuff</p>) }
@@ -116,7 +116,7 @@ describe CatalogHelper, type: :helper do
 
   describe '#manuscript_link' do
     let(:druid) { 'bg021sq9590' }
-    let(:input) { { value: [druid], document: document } }
+    let(:input) { { value: [druid], document: } }
     let(:show_page) { "/test-flag-exhibit-slug/catalog/#{druid}" }
 
     before do
@@ -169,7 +169,7 @@ describe CatalogHelper, type: :helper do
       end
 
       it 'wraps each highlight value in a paragraph tag' do
-        ps = helper.render_fulltext_highlight(document: document)
+        ps = helper.render_fulltext_highlight(document:)
         expect(ps).to eq '<p>The first <em>Value1</em></p><p>The <em>Value2</em> second</p>'
       end
     end
@@ -180,7 +180,7 @@ describe CatalogHelper, type: :helper do
       end
 
       it 'only renders the configured amount of snippets' do
-        ps = helper.render_fulltext_highlight(document: document)
+        ps = helper.render_fulltext_highlight(document:)
         expect(ps.scan('<p>').count).to eq Settings.full_text_highlight.snippet_count
       end
     end
@@ -193,7 +193,7 @@ describe CatalogHelper, type: :helper do
       it 'offers a link to go the record view w/ a search initiated' do
         expect(helper).to receive_messages(current_exhibit: {}, params: { q: 'The search term' })
 
-        link = Capybara.string(helper.render_fulltext_highlight(document: document)).find('a')
+        link = Capybara.string(helper.render_fulltext_highlight(document:)).find('a')
         expect(link.text).to eq('Search for "The search term" in document text')
         expect(link['href']).to match(/abc123\?search=The\+search\+term/)
       end
@@ -203,7 +203,7 @@ describe CatalogHelper, type: :helper do
       let(:highlights) { [] }
 
       it 'is nil' do
-        ps = helper.render_fulltext_highlight(document: document)
+        ps = helper.render_fulltext_highlight(document:)
         expect(ps).to be_blank
       end
     end

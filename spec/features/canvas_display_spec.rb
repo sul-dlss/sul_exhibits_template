@@ -19,7 +19,7 @@ describe 'Canvas Display', type: :feature do
       instance_double(Faraday::Response, body: annolist_file)
     )
 
-    canvas = CanvasResource.new(data: canvas_data, exhibit: exhibit)
+    canvas = CanvasResource.new(data: canvas_data, exhibit:)
     canvas.save_and_index
 
     visit spotlight.exhibit_solr_document_path(exhibit_id: exhibit.slug, id: document_id)

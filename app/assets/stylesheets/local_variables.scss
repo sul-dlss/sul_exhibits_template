@@ -17,4 +17,4 @@ $modal-header-footer-height-guess: 280px;
 //  https://github.com/sul-dlss/exhibits/issues/1618
 // This appears to have the same effect as using .container-md rather than .container
 // Only set max-width of containers at breakpoints above "sm"
-$container-max-widths: map-remove($container-max-widths, "sm");
+//$container-max-widths: map-remove($container-max-widths, "sm");

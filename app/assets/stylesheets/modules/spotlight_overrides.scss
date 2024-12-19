@@ -220,3 +220,7 @@ h5,
     z-index: 1;
   }
 }
+
+.card-img-overlay {
+  --exhibit-card-overlay-bg: rgba(var(--stanford-fog-light), 0.9);
+}

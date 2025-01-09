@@ -1,4 +1,5 @@
 /* global Blacklight */
+import Blacklight from "blacklight-frontend";
 
 Blacklight.onLoad(function(){
   var uniqueId = (function() {

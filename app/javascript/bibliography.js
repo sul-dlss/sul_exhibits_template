@@ -1,5 +1,6 @@
 /* eslint-disable camelcase */
 /* global Bibliography */
+import Blacklight from "blacklight-frontend";
 
 (function (global) {
   var Bibliography;
@@ -60,7 +61,7 @@
       // This string contains the formatted bibliography for this item.
       // This string can contain HTML elements as well which should be displayed correctly.
       var formatted_bibliography = bibEntry.attributes.formatted_bibliography_ts.attributes.value;
-     
+
       return '<p class="' + elClass + '">' +
                 formatted_bibliography +
               ' <a href="' + bibEntry.links.self + '">' +

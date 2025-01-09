@@ -1,5 +1,5 @@
-/* global Blacklight */
 /* global NestedRelatedItems */
+import Blacklight from "blacklight-frontend";
 
 (function (global) {
   var NestedRelatedItems;

@@ -1,6 +1,6 @@
-/* global Blacklight */
 /* global Bloodhound */
 /* global IndexStatusTypeahead */
+import Blacklight from "blacklight-frontend";
 
 (function (global) {
   var IndexStatusTypeahead;

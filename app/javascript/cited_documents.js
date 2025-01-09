@@ -1,6 +1,7 @@
 /* eslint-disable camelcase */
 /* global CitedDocuments */
-/* global Blacklight */
+
+import Blacklight from "blacklight-frontend";
 
 (function (global) {
   var CitedDocuments;

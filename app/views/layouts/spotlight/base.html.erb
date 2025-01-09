@@ -18,7 +18,10 @@
     <% end %>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sul-dlss/component-library@v2024-12-18/styles/sul.css" />
     <%= stylesheet_link_tag "component_library_overrides" %>
-    <%= javascript_include_tag "application", async: Settings.async_javascript %>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.serializeJSON/3.2.1/jquery.serializejson.min.js"></script>
+
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
     <script type="text/javascript">
      Honeybadger.configure({
        apiKey: '<%= Honeybadger.config.get(:api_key) %>',

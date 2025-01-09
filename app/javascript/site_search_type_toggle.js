@@ -1,5 +1,5 @@
-/* global Blacklight */
 /* global SiteSearchTypeToggle */
+import Blacklight from "blacklight-frontend";
 
 (function (global) {
   var SiteSearchTypeToggle;

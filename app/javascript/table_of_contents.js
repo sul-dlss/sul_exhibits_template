@@ -1,4 +1,4 @@
-/* global Blacklight */
+import Blacklight from "blacklight-frontend";
 
 Blacklight.onLoad(function() {
   $('.blacklight-toc_search').on('show.bs.collapse hide.bs.collapse', function(){

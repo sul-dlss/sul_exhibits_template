@@ -1,6 +1,7 @@
-/* global Blacklight */
 /* global Bloodhound */
 /* global ExhibitSearchTypeahead */
+
+import Blacklight from "blacklight-frontend";
 
 (function (global) {
   var ExhibitSearchTypeahead;

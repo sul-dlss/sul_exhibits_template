@@ -87,7 +87,7 @@ gem 'config'
 
 gem 'bootstrap', '~> 5.3'
 gem 'bootstrap_form', '~> 5.4'
-gem 'blacklight', '~> 8.0'
+gem 'blacklight', '~> 9.0.0.beta1'
 gem 'blacklight-gallery', '~> 4.4'
 gem 'blacklight_heatmaps', '~> 1.4'
 gem 'blacklight-spotlight', '~> 4.4', '>= 4.4.0'

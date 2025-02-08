@@ -94,22 +94,20 @@ GEM
     base64 (0.2.0)
     bcrypt (3.1.20)
     bcrypt_pbkdf (1.1.1)
-    bcrypt_pbkdf (1.1.1-arm64-darwin)
-    bcrypt_pbkdf (1.1.1-x86_64-darwin)
     benchmark (0.4.0)
     bibtex-ruby (6.1.0)
       latex-decode (~> 0.0)
       racc (~> 1.7)
     bigdecimal (3.1.9)
     bindex (0.8.1)
-    blacklight (8.8.1)
+    blacklight (9.0.0.beta1)
       globalid
       i18n (>= 1.7.0)
       jbuilder (~> 2.7)
       kaminari (>= 0.15)
       ostruct (>= 0.3.2)
-      rails (>= 6.1, < 9)
-      view_component (>= 2.74, < 4)
+      rails (>= 7.0, < 9)
+      view_component (~> 3.9)
       zeitwerk
     blacklight-gallery (4.8.4)
       blacklight (>= 7.17, < 9)
@@ -931,7 +929,7 @@ PLATFORMS
 DEPENDENCIES
   acts-as-taggable-on
   bibtex-ruby
-  blacklight (~> 8.0)
+  blacklight (~> 9.0.0.beta1)
   blacklight-gallery (~> 4.4)
   blacklight-oembed (~> 1.0)
   blacklight-spotlight (~> 4.4, >= 4.4.0)

@@ -1,4 +1,7 @@
 SirTrevor.Blocks.SolrDocumentsEmbed = (function(){
+  const spotlightSetIiifFields = SirTrevor.Blocks.SolrDocumentsEmbed.prototype.setIiifFields
+  const spotlightItemPanelIiifFields = SirTrevor.Blocks.SolrDocumentsEmbed.prototype._itemPanelIiifFields
+
   return SirTrevor.Blocks.SolrDocumentsEmbed.extend({
     item_options: function() {
       const formId = this.formId("maxheight");
@@ -6,7 +9,32 @@ SirTrevor.Blocks.SolrDocumentsEmbed = (function(){
         `<label for="${formId}">Maximum height of viewer (in pixels)</label>`,
         `<input id="${formId}" type="number" class="form-control" placeholder="600" name="maxheight" />`
       ].join(' ');
-    }
+    },
+    setIiifFields: function(panel, manifest_data, initialize) {
+      const panelElement = panel[0]
+      const itemId = panelElement.dataset.id
+      const iiifCanvasId = panelElement.querySelector(`input[name="item[${itemId}][iiif_canvas_id]"]`)
+      const oldCanvasId = iiifCanvasId.value
+
+      spotlightSetIiifFields.call(this, panel, manifest_data, initialize)
+      if (oldCanvasId !== iiifCanvasId.value) {
+        iiifCanvasId.dispatchEvent(new Event('change', { bubbles: false }))
+      }
+    },
+    _itemPanelIiifFields: function(index, autocomplete_data) {
+      const spotliightIiifFields = spotlightItemPanelIiifFields.call(this, index, autocomplete_data)
+
+      // This is the initialization of all block level thumbnails.
+      const thumbnails = this?.el.querySelectorAll('input[name*="[thumbnail_image_url]"]')
+      thumbnails?.forEach(thumbnail => {
+        thumbnail.dispatchEvent(new Event('change', { bubbles: false }))
+      })
+
+      return [
+        spotliightIiifFields,
+        "<input type='hidden' name='item[" + index + "][iiif_initial_viewer_config]' value='" + (autocomplete_data.iiif_initial_viewer_config) + "'/>",
+      ].join("\n");
+    },
   });
 })();
 

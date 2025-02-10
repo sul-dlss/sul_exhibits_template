@@ -53,5 +53,15 @@ RSpec.feature 'Solr Documents Embed Block', js: true do
       save_and_verify_page
       expect(page.find('.items-block iframe')['height']).to eq '300px'
     end
+
+    it 'allows curators to select the image area' do
+      visit spotlight.edit_exhibit_home_page_path(exhibit)
+
+      add_widget('solr_documents_embed')
+
+      fill_in_solr_document_block_typeahead_field(with: 'zy575vf8599')
+
+      expect(page).to have_css('.select-image-area')
+    end
   end
 end
